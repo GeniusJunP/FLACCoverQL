@@ -13,6 +13,7 @@
 		CFE06C3502F408A91A8EDD09 /* FLACCoverQLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1628BA50D25C066EB316BED4 /* FLACCoverQLApp.swift */; };
 		DC7F08DCC164830545194AEE /* ThumbnailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9BEBBA865553ECB4A5FA8D /* ThumbnailProvider.swift */; };
 		DE4975A0D93678557E2F9B29 /* FLACMetadata in Frameworks */ = {isa = PBXBuildFile; productRef = 8C6EB2A36F7AA4FFA8B548D6 /* FLACMetadata */; };
+		F311CAC088FAF1444DE0BD78 /* test.flac in Resources */ = {isa = PBXBuildFile; fileRef = 20024378BD5A37492E021CA1 /* test.flac */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		0CF888E23AF6A8A4551A23B8 /* FLACCoverQLThumbnail.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FLACCoverQLThumbnail.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1628BA50D25C066EB316BED4 /* FLACCoverQLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLACCoverQLApp.swift; sourceTree = "<group>"; };
+		20024378BD5A37492E021CA1 /* test.flac */ = {isa = PBXFileReference; path = test.flac; sourceTree = "<group>"; };
 		355031B228C796F3E3E8AE55 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/UI.strings; sourceTree = "<group>"; };
 		3C8F019256FCB24EC1B13473 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UI.strings; sourceTree = "<group>"; };
 		495C490BBDD0CECA59ED979D /* FLACCoverQL.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FLACCoverQL.entitlements; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				495C490BBDD0CECA59ED979D /* FLACCoverQL.entitlements */,
 				1628BA50D25C066EB316BED4 /* FLACCoverQLApp.swift */,
 				E0FA2D10D333071AD729A840 /* Info.plist */,
+				20024378BD5A37492E021CA1 /* test.flac */,
 				CFA32BF6AC852ECCEEFC7122 /* UI.strings */,
 			);
 			path = App;
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				059CBF058A908CFD18C39836 /* UI.strings in Resources */,
+				F311CAC088FAF1444DE0BD78 /* test.flac in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

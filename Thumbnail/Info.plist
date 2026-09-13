@@ -4,8 +4,6 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>CFBundleDisplayName</key>
-	<string>FLACCoverQLThumbnail</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -20,19 +18,5 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>NSExtension</key>
-	<dict>
-		<key>NSExtensionAttributes</key>
-		<dict>
-			<key>QLSupportedContentTypes</key>
-			<array>
-				<string>org.xiph.flac</string>
-			</array>
-		</dict>
-		<key>NSExtensionPointIdentifier</key>
-		<string>com.apple.quicklook.thumbnail</string>
-		<key>NSExtensionPrincipalClass</key>
-		<string>$(PRODUCT_MODULE_NAME).ThumbnailProvider</string>
-	</dict>
 </dict>
 </plist>
