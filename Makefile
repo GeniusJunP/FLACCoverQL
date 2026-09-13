@@ -1,6 +1,5 @@
 APP_NAME := FLACCoverQL
 BUILD_DIR := build
-INSTALL_DIR := $(HOME)/Applications
 
 .PHONY: build install clean
 
@@ -9,11 +8,12 @@ build:
 		-scheme $(APP_NAME) \
 		-configuration Release \
 		-derivedDataPath $(BUILD_DIR) \
+		-destination 'generic/platform=macOS' \
 		build
 
 install: build
-	ditto "$(BUILD_DIR)/Build/Products/Release/$(APP_NAME).app" "$(INSTALL_DIR)/$(APP_NAME).app"
-	open "$(INSTALL_DIR)/$(APP_NAME).app"
+	ln -sfh /Applications "$(BUILD_DIR)/Build/Products/Release/Applications"
+	open "$(BUILD_DIR)/Build/Products/Release/"
 
 clean:
 	rm -rf $(BUILD_DIR)
