@@ -1,0 +1,8 @@
+"description" = "Displays FLAC file cover art as Finder thumbnails.";
+"clearCache" = "Clear Thumbnail Cache";
+"openSettings" = "Extension Settings";
+"recheck" = "Recheck";
+"statusChecking" = "Checking...";
+"statusActive" = "Extension is working";
+"statusInactive" = "Extension is not responding (enable it in Settings)";
+"statusError" = "Test file not found";

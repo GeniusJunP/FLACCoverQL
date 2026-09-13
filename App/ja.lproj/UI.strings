@@ -1,0 +1,8 @@
+"description" = "FLAC ファイルのカバーアートを Finder のサムネイルとして表示します。";
+"clearCache" = "キャッシュを消去";
+"openSettings" = "機能拡張の設定";
+"recheck" = "再確認";
+"statusChecking" = "確認中...";
+"statusActive" = "機能拡張は正常に動作しています";
+"statusInactive" = "機能拡張が応答しません（設定で有効化してください）";
+"statusError" = "テストファイルが見つかりません";

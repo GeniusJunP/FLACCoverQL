@@ -12,36 +12,45 @@ struct FLACCoverQLApp: App {
 }
 
 struct ContentView: View {
-    @State private var cacheCleared = false
+    @State private var status: ExtensionStatus = .checking
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("FLACCoverQL")
                 .font(.title2.bold())
 
-            Text("FLAC ファイルのカバーアートを Finder のサムネイルとして表示する機能拡張")
+            Text("description", tableName: "UI")
                 .fixedSize(horizontal: false, vertical: true)
                 .foregroundStyle(.secondary)
 
             Divider()
 
-            Button("サムネイルキャッシュを消去") {
-                clearCache()
-            }
-
-            if cacheCleared {
-                Text("キャッシュを消去した。Finder でサムネイルが再生成される。")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+            HStack(spacing: 8) {
+                Circle()
+                    .fill(status.color)
+                    .frame(width: 10, height: 10)
+                Text(String(localized: status.key, table: "UI"))
                     .fixedSize(horizontal: false, vertical: true)
             }
 
-            Button("機能拡張の設定を開く") {
-                NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.ExtensionsPreferences")!)
+            HStack(spacing: 12) {
+                Button(String(localized: "clearCache", table: "UI")) {
+                    clearCache()
+                }
+                Button(String(localized: "openSettings", table: "UI")) {
+                    NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.ExtensionsPreferences")!)
+                }
+                Button(String(localized: "recheck", table: "UI")) {
+                    status = .checking
+                    Task { await checkExtension() }
+                }
             }
         }
         .padding(24)
-        .frame(minWidth: 320, idealWidth: 360)
+        .frame(minWidth: 360)
+        .task {
+            await checkExtension()
+        }
     }
 
     private func clearCache() {
@@ -52,6 +61,48 @@ struct ContentView: View {
         process.standardError = FileHandle.nullDevice
         try? process.run()
         process.waitUntilExit()
-        cacheCleared = true
+    }
+
+    private func checkExtension() async {
+        guard let testURL = Bundle.main.url(forResource: "test", withExtension: "flac") else {
+            status = .error
+            return
+        }
+
+        let request = QLThumbnailGenerator.Request(
+            fileAt: testURL,
+            size: CGSize(width: 64, height: 64),
+            scale: 1.0,
+            representationTypes: .thumbnail
+        )
+
+        do {
+            let rep = try await QLThumbnailGenerator.shared.generateBestRepresentation(for: request)
+            status = rep.type == .thumbnail ? .active : .inactive
+        } catch {
+            status = .inactive
+        }
+    }
+}
+
+enum ExtensionStatus {
+    case checking, active, inactive, error
+
+    var color: Color {
+        switch self {
+        case .checking: .gray
+        case .active: .green
+        case .inactive: .yellow
+        case .error: .red
+        }
+    }
+
+    var key: String.LocalizationValue {
+        switch self {
+        case .checking: "statusChecking"
+        case .active: "statusActive"
+        case .inactive: "statusInactive"
+        case .error: "statusError"
+        }
     }
 }

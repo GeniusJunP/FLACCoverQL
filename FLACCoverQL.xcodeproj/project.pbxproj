@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C387BB58A0B97E1ADEA5DDBA /* FLACCoverQLThumbnail.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0CF888E23AF6A8A4551A23B8 /* FLACCoverQLThumbnail.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		059CBF058A908CFD18C39836 /* UI.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFA32BF6AC852ECCEEFC7122 /* UI.strings */; };
+		C387BB58A0B97E1ADEA5DDBA /* FLACCoverQLThumbnail.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0CF888E23AF6A8A4551A23B8 /* FLACCoverQLThumbnail.appex */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CB157BC812A598CDC0FDDA38 /* FLACMetadata in Frameworks */ = {isa = PBXBuildFile; productRef = 304A8D43A0754D5551DEC938 /* FLACMetadata */; };
 		CFE06C3502F408A91A8EDD09 /* FLACCoverQLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1628BA50D25C066EB316BED4 /* FLACCoverQLApp.swift */; };
 		DC7F08DCC164830545194AEE /* ThumbnailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9BEBBA865553ECB4A5FA8D /* ThumbnailProvider.swift */; };
@@ -41,6 +42,8 @@
 /* Begin PBXFileReference section */
 		0CF888E23AF6A8A4551A23B8 /* FLACCoverQLThumbnail.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FLACCoverQLThumbnail.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1628BA50D25C066EB316BED4 /* FLACCoverQLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLACCoverQLApp.swift; sourceTree = "<group>"; };
+		355031B228C796F3E3E8AE55 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/UI.strings; sourceTree = "<group>"; };
+		3C8F019256FCB24EC1B13473 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UI.strings; sourceTree = "<group>"; };
 		495C490BBDD0CECA59ED979D /* FLACCoverQL.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FLACCoverQL.entitlements; sourceTree = "<group>"; };
 		62C8C59F5F38EBC56C14D600 /* FLACMetadata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FLACMetadata; path = FLACMetadata; sourceTree = SOURCE_ROOT; };
 		64B69AEF2169899D30E3A765 /* FLACCoverQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLACCoverQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +79,7 @@
 				495C490BBDD0CECA59ED979D /* FLACCoverQL.entitlements */,
 				1628BA50D25C066EB316BED4 /* FLACCoverQLApp.swift */,
 				E0FA2D10D333071AD729A840 /* Info.plist */,
+				CFA32BF6AC852ECCEEFC7122 /* UI.strings */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -144,6 +148,7 @@
 			buildConfigurationList = 3ED37F6D9020831E165DBCEF /* Build configuration list for PBXNativeTarget "FLACCoverQL" */;
 			buildPhases = (
 				C9AC8D10E1C4145CC0833FB9 /* Sources */,
+				37B9ED9EE936A01032C1D193 /* Resources */,
 				7B31B6C3EC2307B46013A51E /* Frameworks */,
 				B2FFA2C5ED58462C2A0C38EC /* Embed Foundation Extensions */,
 			);
@@ -185,6 +190,7 @@
 			knownRegions = (
 				Base,
 				en,
+				ja,
 			);
 			mainGroup = 939234E13F44AE4B02ABE9C7;
 			minimizedProjectReferenceProxies = 1;
@@ -201,6 +207,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		37B9ED9EE936A01032C1D193 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				059CBF058A908CFD18C39836 /* UI.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5C9BB221D269B7851F7CD2B9 /* Sources */ = {
@@ -228,6 +245,18 @@
 			targetProxy = 1EEEACE789901DF0819551E3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CFA32BF6AC852ECCEEFC7122 /* UI.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C8F019256FCB24EC1B13473 /* en */,
+				355031B228C796F3E3E8AE55 /* ja */,
+			);
+			name = UI.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		25DCFA452AF61D9D2869CB2A /* Release */ = {
