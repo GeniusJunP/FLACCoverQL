@@ -1,8 +1,8 @@
-"description" = "Displays FLAC file cover art as Finder thumbnails.";
+"description" = "Enables embedded FLAC cover art to be displayed in Finder thumbnails.";
 "clearCache" = "Clear Thumbnail Cache";
 "openSettings" = "Extension Settings";
-"recheck" = "Recheck";
-"statusChecking" = "Checking...";
-"statusActive" = "Extension is working";
-"statusInactive" = "Extension is not responding (enable it in Settings)";
-"statusError" = "Test file not found";
+"recheck" = "Recheck Extension Status";
+"statusChecking" = "Checking the test FLAC thumbnail...";
+"statusActive" = "The test FLAC thumbnail was generated";
+"statusTestFileMissing" = "Bundled test FLAC file (test.flac) not found";
+"statusUnexpectedRepresentation" = "Quick Look did not return a thumbnail";

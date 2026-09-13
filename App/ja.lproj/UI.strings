@@ -1,8 +1,8 @@
-"description" = "FLAC ファイルのカバーアートを Finder のサムネイルとして表示します。";
+"description" = "FLAC ファイルに埋め込まれたカバーアートを、Finder のサムネイルに表示できるようにします。";
 "clearCache" = "キャッシュを消去";
 "openSettings" = "機能拡張の設定";
-"recheck" = "再確認";
-"statusChecking" = "確認中...";
-"statusActive" = "機能拡張は正常に動作しています";
-"statusInactive" = "機能拡張が応答しません（設定で有効化してください）";
-"statusError" = "テストファイルが見つかりません";
+"recheck" = "動作状態を再確認";
+"statusChecking" = "動作確認用 FLAC のサムネイルを確認中...";
+"statusActive" = "動作確認用 FLAC のサムネイルを生成できました";
+"statusTestFileMissing" = "同梱の動作確認用 FLAC ファイル（test.flac）が見つかりません";
+"statusUnexpectedRepresentation" = "Quick Look からサムネイルが返されませんでした";

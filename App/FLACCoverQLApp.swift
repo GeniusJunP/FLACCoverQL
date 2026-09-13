@@ -25,13 +25,8 @@ struct ContentView: View {
 
             Divider()
 
-            HStack(spacing: 8) {
-                Circle()
-                    .fill(status.color)
-                    .frame(width: 10, height: 10)
-                Text(String(localized: status.key, table: "UI"))
-                    .fixedSize(horizontal: false, vertical: true)
-            }
+            Text(status.message)
+                .fixedSize(horizontal: false, vertical: true)
 
             HStack(spacing: 12) {
                 Button(String(localized: "clearCache", table: "UI")) {
@@ -65,7 +60,7 @@ struct ContentView: View {
 
     private func checkExtension() async {
         guard let testURL = Bundle.main.url(forResource: "test", withExtension: "flac") else {
-            status = .error
+            status = .failure(String(localized: "statusTestFileMissing", table: "UI"))
             return
         }
 
@@ -77,32 +72,29 @@ struct ContentView: View {
         )
 
         do {
-            let rep = try await QLThumbnailGenerator.shared.generateBestRepresentation(for: request)
-            status = rep.type == .thumbnail ? .active : .inactive
+            let representation = try await QLThumbnailGenerator.shared.generateBestRepresentation(for: request)
+            guard representation.type == .thumbnail else {
+                status = .failure(String(localized: "statusUnexpectedRepresentation", table: "UI"))
+                return
+            }
+            status = .active
         } catch {
-            status = .inactive
+            status = .failure(error.localizedDescription)
         }
     }
 }
 
 enum ExtensionStatus {
-    case checking, active, inactive, error
+    case checking, active, failure(String)
 
-    var color: Color {
+    var message: String {
         switch self {
-        case .checking: .gray
-        case .active: .green
-        case .inactive: .yellow
-        case .error: .red
-        }
-    }
-
-    var key: String.LocalizationValue {
-        switch self {
-        case .checking: "statusChecking"
-        case .active: "statusActive"
-        case .inactive: "statusInactive"
-        case .error: "statusError"
+        case .checking:
+            String(localized: "statusChecking", table: "UI")
+        case .active:
+            String(localized: "statusActive", table: "UI")
+        case .failure(let detail):
+            detail
         }
     }
 }
