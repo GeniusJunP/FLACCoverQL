@@ -17,9 +17,6 @@ install: build
 	mkdir -p "$(STAGE_DIR)"
 	ditto "$(BUILD_DIR)/Build/Products/Release/$(APP_NAME).app" "$(STAGE_DIR)/$(APP_NAME).app"
 	ln -sfh /Applications "$(STAGE_DIR)/Applications"
-	@echo ""
-	@echo "$(APP_NAME).app を Applications にドラッグしてインストールしてください。"
-	@echo ""
 	open "$(STAGE_DIR)"
 
 clean:

@@ -3,6 +3,6 @@
 "openSettings" = "Extension Settings";
 "recheck" = "Recheck Extension Status";
 "statusChecking" = "Checking the test FLAC thumbnail...";
-"statusActive" = "The test FLAC thumbnail was generated";
+"statusActive" = "Extension is working";
 "statusTestFileMissing" = "Bundled test FLAC file (test.flac) not found";
 "statusUnexpectedRepresentation" = "Quick Look did not return a thumbnail";

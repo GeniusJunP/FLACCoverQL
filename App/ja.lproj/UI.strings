@@ -3,6 +3,6 @@
 "openSettings" = "機能拡張の設定";
 "recheck" = "動作状態を再確認";
 "statusChecking" = "動作確認用 FLAC のサムネイルを確認中...";
-"statusActive" = "動作確認用 FLAC のサムネイルを生成できました";
+"statusActive" = "動作しています";
 "statusTestFileMissing" = "同梱の動作確認用 FLAC ファイル（test.flac）が見つかりません";
 "statusUnexpectedRepresentation" = "Quick Look からサムネイルが返されませんでした";
